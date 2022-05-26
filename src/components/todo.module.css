@@ -1,0 +1,42 @@
+.container{
+    margin:0 auto ;
+    margin-top: 2vh;
+    border: solid 1px black;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px;
+    width: 30vw;
+    height: auto;
+    margin-bottom: 5vh;
+}
+.doneContainer{
+    margin:0 auto ;
+    margin-top: 2vh;
+    border: solid 1px black;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px;
+    background-color: rgb(147, 241, 147);
+    width: 30vw;
+    height: auto;
+    margin-bottom: 5vh;
+}
+.title{
+    margin-bottom: 2vh;
+}
+.logoContainer{
+    margin: 0 auto;
+    display: flex;
+    width: 20vw;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.logos{
+    width: 4vw;
+    cursor: pointer;
+    margin-bottom: 1vh;
+}
+.btn{
+    cursor: pointer;
+    margin-bottom: 1vh;
+    width: 6vw;
+    font-size: 1vw;
+}
