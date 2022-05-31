@@ -7,6 +7,7 @@
     width: 30vw;
     height: auto;
     margin-bottom: 5vh;
+
 }
 .doneContainer{
     margin:0 auto ;
@@ -18,6 +19,7 @@
     width: 30vw;
     height: auto;
     margin-bottom: 5vh;
+    
 }
 .title{
     margin-bottom: 2vh;
@@ -39,4 +41,14 @@
     margin-bottom: 1vh;
     width: 6vw;
     font-size: 1vw;
+}
+
+.listContainer {
+    list-style: none;
+    
+}
+
+.singleTodo {
+    border: 1px solid rgba(193, 193, 193, 0.33);
+    margin-bottom: 5px;
 }

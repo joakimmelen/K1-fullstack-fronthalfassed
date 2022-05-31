@@ -1,35 +1,34 @@
 import "./App.css";
-import AddTodos from "./components/AddTodos";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Todo from "./components/Todo";
+import InputBox from "./components/InputBox";
+import TodoList from "./components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const fetchTodos = async () => {
-    const response = await axios.get("http://localhost:666/api/todos");
-    setTodos(response.data);
+  const url = "http://localhost:666/api/todos";
+
+  const getTodos = async () => {
+    const { data } = await axios.get(url);
+    setTodos(data);
   };
-  console.log(todos);
-  // const [lazy, setLazy] = useState(false);
-  // const lazyFunc = () => {
-  //   setLazy(!lazy);
-  // };
+
+  const addTodo = async (input) => {
+    const data = { title: input, done: false };
+    const json = JSON.stringify(data);
+    await axios.post(url, json);
+    getTodos();
+  };
 
   useEffect(() => {
-    fetchTodos();
-    // }, [lazy]);
+    getTodos();
   }, []);
 
   return (
     <div className="App">
-      <AddTodos />
-      {todos.map((todo) => {
-        return <Todo key={todo.id} todo={todo} />;
-        // <AddTodos lazyFunc={lazyFunc} />
-        // {todos.map((todo) => {
-        //   return <Todo key={todo.id} todo={todo} lazyFunc={lazyFunc} />;
-      })}
+      <h1>Et voilá, ze list!</h1>
+      <InputBox onSubmit={addTodo} />
+      <TodoList todos={todos} getTodos={getTodos} />
     </div>
   );
 }
